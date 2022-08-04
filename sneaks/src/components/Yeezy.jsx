@@ -11,25 +11,23 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import SneakerSize from './SneakerSize';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://goat.com/">
-        Sneakerhead
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+// function Copyright() {
+//   return (
+//     <Typography variant="body2" color="text.secondary" align="center">
+//       {'Copyright © '}
+//       <Link color="inherit" href="https://goat.com/">
+//         Sneakerhead
+//       </Link>{' '}
+//       {new Date().getFullYear()}
+//       {'.'}
+//     </Typography>
+//   );
+// }
 
 const cards = [1,2,3];
 
@@ -43,14 +41,14 @@ const btn={
     color:'black'
 }
 
+const navbtn={
+  backgroundColor:'black',
+  color:'white',
+  alignItems:'right',
+  justifyContent:'right'
+}
 
-
-export default function Jordan() {
-  const [value, setValue] = React.useState(0);
-
-const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+export default function Yeezy() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -60,13 +58,6 @@ const handleChange = (event, newValue) => {
           <Typography variant="h6" noWrap marginLeft="20px">
             Sneakerhead
           </Typography>
-          <Box sx={{ width: '70%', bgcolor: 'background.black', color:'white' }}>
-            <Tabs value={value} onChange={handleChange} centered>
-              <Tab label="Yeezy" />
-              <Tab label="Nike Dunk" />
-              <Tab label="Nike Air Max" />
-            </Tabs>
-          </Box>
         </Toolbar>
       </AppBar>
       <main>
@@ -86,10 +77,10 @@ const handleChange = (event, newValue) => {
               color="text.primary"
               gutterBottom
             >
-              Air Jordan
+              Adidas Yeezy
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-            See what's happening with the Jordan Brand. Check out the latest innovations, top styles and featured stories.
+            The Yeezy Boost 350 is not only the most conspicuous Yeezy silhouette, but it's also the most comfortable. The combination of the full-length Boost sole that provides cloud-like cushioning and the primeknit upper that gives the sneaker a sock-fit, makes this shoe just as comfortable as a performance sneaker.
             </Typography>
             
           </Container>
@@ -106,23 +97,25 @@ const handleChange = (event, newValue) => {
                     component="img"
                     sx={{
                       // 16:9
-                      pt: '56.25%',
+                      pt: '56.25%',                    
                     }}
-                    image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/Jordan1.jpg")}
-                    
+                    image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/Yeezy.jpg")}
+                   
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Air Jordan
+                      Adidas Yeezy
                     </Typography>
                     <Typography>
-                    Air Jordan 1 Retro High OG 'Patent Bred'
+                    Yeezy Boost 350 V2 'Red'
                     </Typography>
-                    <Typography align="center"><b>$2500</b>
-                        
+                    <Typography align="center" paddingTop="7px">
+                      <b>
+                        $700
+                      </b>
                     </Typography>
                   </CardContent>
-                  <CardActions alignContent="center">
+                  <CardActions>
                     <Button size="small" style={btn}>View</Button>
                     <SneakerSize />
                     <Button size="small" style={btn}>Cart</Button>
@@ -132,51 +125,17 @@ const handleChange = (event, newValue) => {
             ))}
           </Grid>
         </Container>
-        {/* <Container sx={{ py: 8 }} maxWidth="md"> */}
-          {/* End hero unit */}
-          {/* <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                >
-                  <CardMedia
-                    component="img"
-                    sx={{
-                      // 16:9
-                      pt: '56.25%',
-                    }}
-                    image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/TravisS.jpg")}
-                    
-                  />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                    Travis Scott x Air Jordan 1
-                    </Typography>
-                    <Typography>
-                    Travis Scott x Air Jordan 1 Retro High OG 'Mocha'
-                    </Typography>
-                    <Typography>
-                        $3500
-                    </Typography>
-                  </CardContent>
-                  <CardActions> */}
-                    {/* <Button size="small" style={btn}>View</Button> */}
-                    {/* <SneakerSize />
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container> */}
-        
+       
       </main>
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
        
-        <Copyright />
+        {/* <Copyright /> */}
       </Box>
       {/* End footer */}
+      <Link to="/">
+          <Button fullWidth variant="contained" style={navbtn}>Back</Button>
+        </Link>
     </ThemeProvider>
   );
 }

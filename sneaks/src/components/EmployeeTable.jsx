@@ -1,10 +1,6 @@
 import { useEffect, useState} from 'react';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteIcon from '@mui/icons-material/Delete';
-import {useNavigate } from "react-router-dom";
-import * as employeeServices from '../services/EmployeeService';
+import * as employeeService from '../services/EmployeeService';
 import {
-    IconButton,
     Table,
     TableBody,
     TableCell,
@@ -14,21 +10,15 @@ import {
   
 export const EmployeeTable = () => {
     const [employees, setEmployees]= useState([]);
-    const navigate = useNavigate();
+    
 
     useEffect(()=> {
-        employeeServices.getAllEmployees()
+        employeeService.getAllEmployees()
         .then(res => {
             setEmployees(res.data);
         })
     }, [])
-    const goToUpdate = (id) => {
-        navigate(`/${id}`);
-    }
-
-    const deleteEmployee = (id) => {
-        console.log(id);
-    }
+  
 
     return (
         <div >
@@ -47,8 +37,20 @@ export const EmployeeTable = () => {
                     <TableCell>
                         Email
                     </TableCell>
+                    <TableCell>
+                        Street
+                    </TableCell>
+                    <TableCell>
+                        City
+                    </TableCell>
+                    <TableCell>
+                        State
+                    </TableCell>
+                    <TableCell>
+                        Zip
+                    </TableCell>
                     <TableCell align="right">
-                        Actions
+                        Cart
                     </TableCell>
                 </TableRow>
                 </TableHead>
@@ -72,14 +74,19 @@ export const EmployeeTable = () => {
                                     <TableCell>
                                         {employee.email}
                                     </TableCell>
-                                    <TableCell align="right">
-                                        <IconButton component="a" onClick={()=> goToUpdate(employee.id)}>
-                                            <EditIcon />
-                                        </IconButton>
-                                        <IconButton component="a" onClick={()=> deleteEmployee(employee.id)}>
-                                            <DeleteIcon />
-                                        </IconButton>
+                                    <TableCell>
+                                        {employee.street}
                                     </TableCell>
+                                    <TableCell>
+                                        {employee.city}
+                                    </TableCell>
+                                    <TableCell>
+                                        {employee.state}
+                                    </TableCell>
+                                    <TableCell>
+                                        {employee.zip}
+                                    </TableCell>
+                                    
                                 </TableRow>
                             ) 
                         })

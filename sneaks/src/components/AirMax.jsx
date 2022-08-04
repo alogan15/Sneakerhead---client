@@ -11,23 +11,23 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import SneakerSize from './SneakerSize';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://goat.com/">
-        Sneakerhead
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+// function Copyright() {
+//   return (
+//     <Typography variant="body2" color="text.secondary" align="center">
+//       {'Copyright © '}
+//       <Link color="inherit" href="https://goat.com/">
+//         Sneakerhead
+//       </Link>{' '}
+//       {new Date().getFullYear()}
+//       {'.'}
+//     </Typography>
+//   );
+// }
 
 const cards = [1,2,3];
 
@@ -39,6 +39,13 @@ const nav={
 
 const btn={
     color:'black'
+}
+
+const navbtn={
+  backgroundColor:'black',
+  color:'white',
+  alignItems:'right',
+  justifyContent:'right'
 }
 
 export default function AirMax() {
@@ -102,8 +109,10 @@ export default function AirMax() {
                     <Typography>
                     Off-White x Air Max 90 'Black'
                     </Typography>
-                    <Typography>
+                    <Typography align="center" paddingTop="7px">
+                      <b>
                         $1700
+                      </b>
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -121,9 +130,12 @@ export default function AirMax() {
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
        
-        <Copyright />
+        {/* <Copyright /> */}
       </Box>
       {/* End footer */}
+      <Link to="/">
+          <Button fullWidth variant="contained" style={navbtn}>Back</Button>
+        </Link>
     </ThemeProvider>
   );
 }

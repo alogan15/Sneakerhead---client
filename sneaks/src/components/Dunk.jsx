@@ -11,23 +11,24 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import SneakerSize from './SneakerSize';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://goat.com/">
-        Sneakerhead
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+// function Copyright() {
+//   return (
+//     <Typography variant="body2" color="text.secondary" align="center">
+//       {'Copyright © '}
+//       <Link color="inherit" href="https://goat.com/">
+//         Sneakerhead
+//       </Link>{' '}
+//       {new Date().getFullYear()}
+//       {'.'}
+//     </Typography>
+//   );
+// }
 
 const cards = [1,2,3];
 
@@ -41,7 +42,14 @@ const btn={
     color:'black'
 }
 
-export default function Yeezy() {
+const navbtn={
+  backgroundColor:'black',
+  color:'white',
+  alignItems:'right',
+  justifyContent:'right'
+}
+
+export default function Dunk() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -70,10 +78,10 @@ export default function Yeezy() {
               color="text.primary"
               gutterBottom
             >
-              Adidas Yeezy
+              Nike Dunk
             </Typography>
             <Typography variant="h5" align="center" color="text.secondary" paragraph>
-            The Yeezy Boost 350 is not only the most conspicuous Yeezy silhouette, but it's also the most comfortable. The combination of the full-length Boost sole that provides cloud-like cushioning and the primeknit upper that gives the sneaker a sock-fit, makes this shoe just as comfortable as a performance sneaker.
+            The Nike Dunk debuted in 1985. Several college-themed Nike Dunk highs released. Apparently, some lows also released although they are not as celebrated as the original set of highs.
             </Typography>
             
           </Container>
@@ -92,18 +100,20 @@ export default function Yeezy() {
                       // 16:9
                       pt: '56.25%',
                     }}
-                    image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/Yeezy.jpg")}
+                    image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/Dunk.jpg")}
                     
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Adidas Yeezy
+                      Nike Dunk
                     </Typography>
                     <Typography>
-                    Yeezy Boost 350 V2 'Red'
+                    Dunk High 'White Black'
                     </Typography>
-                    <Typography>
-                        $700
+                    <Typography align="center" paddingTop="7px">
+                      <b>
+                        $290
+                      </b>
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -121,9 +131,12 @@ export default function Yeezy() {
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
        
-        <Copyright />
+        {/* <Copyright /> */}
       </Box>
       {/* End footer */}
+      <Link to="/">
+          <Button fullWidth variant="contained" style={navbtn}>Back</Button>
+        </Link>
     </ThemeProvider>
   );
 }

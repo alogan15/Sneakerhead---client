@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Link } from 'react-router-dom';
 
 
 const StyledMenu = styled((props) => (
@@ -52,7 +53,7 @@ backgroundColor:'black',
 marginTop:'12px'
 }
 
-export default function CustomizedMenus(props) {
+export default function SneakerMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -61,10 +62,7 @@ export default function CustomizedMenus(props) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const pushToRoute = route => {
-    props.history.push(route)
-    // setOpenMenu(false)
-}
+
 
   return (
     <div>
@@ -91,23 +89,34 @@ export default function CustomizedMenus(props) {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={() => pushToRoute("/Jordan")} disableRipple >
+        <Link to="/Jordan">
           
+        <MenuItem  disableRipple >
           Jordan
         </MenuItem>
+        </Link>
+
+        <Link to="/Yeezy">
         <MenuItem onClick={handleClose} disableRipple>
           
           Yeezy
         </MenuItem>
-        
+        </Link>
+
+        <Link to="/Dunk">
         <MenuItem onClick={handleClose} disableRipple>
           
           Dunks
         </MenuItem>
+        </Link>
+
+        <Link to="/AirMax">
         <MenuItem onClick={handleClose} disableRipple>
           
           Air Max
         </MenuItem>
+        </Link>
+
       </StyledMenu>
     </div>
   );
