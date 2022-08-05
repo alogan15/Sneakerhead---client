@@ -9,7 +9,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import * as employeeService from '../services/EmployeeService';
+import * as sneakerService from '../services/SneakerService';
 import {useNavigate } from "react-router-dom";
 
 const theme = createTheme();
@@ -20,17 +20,27 @@ export function Add() {
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
+  const [street, setStreet] = useState('')
+  const [city, setCity] = useState('')
+  const [state, setState] = useState('')
+  const [zip, setZip] = useState('')
+  const [sneakerType, setSneakerType] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const employee = {
+    const sneaker = {
       firstName: data.get('firstName'),
       lastName: data.get('lastName'),
-      email:data.get('email')
+      email:data.get('email'),
+      street: data.get('street'),
+      city: data.get('city'),
+      state: data.get('state'),
+      zip: data.get('zip'),
+      sneakerType: data.get('sneakerType')
     };
 
-    employeeService.createEmployee(employee)
+    sneakerService.createSneaker(sneaker)
     .then(response => {
       navigate("/");
     })
@@ -91,7 +101,73 @@ export function Add() {
                   autoComplete="email"
                 />
               </Grid>
+              <TextField 
+             
+                    style={textfield} 
+                    required
+                    fullWidth
+                    id="street"
+                    value={street}
+                    onChange= {(e) => setStreet(e.target.value)}
+                    label="Street"
+                    name="street"
+                    autoComplete="street"
+                >
+                </TextField>
+                </Grid>  
+                <Grid container spacing={2}>
+                <Grid item xs={12} sm={6}>
+                <TextField
 
+                    required
+                    fullWidth
+                    id="city"
+                    value={city}
+                    onChange= {(e) => setCity(e.target.value)}
+                    label="City"
+                    name="city"
+                    autoComplete="city"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+
+                    required
+                    fullWidth
+                    id="state"
+                    value={state}
+                    onChange= {(e) => setState(e.target.value)}
+                    label="State"
+                    name="state"
+                    autoComplete="state"
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+              <TextField
+
+                    required
+                    fullWidth
+                    id="zip"
+                    value={zip}
+                    onChange= {(e) => setZip(e.target.value)}
+                    label="Zip"
+                    name="zip"
+                    autoComplete="zip"
+                />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+              <TextField
+                
+                    required
+                    fullWidth
+                    id="sneakerType"
+                    value={sneakerType}
+                    onChange= {(e) => setSneakerType(e.target.value)}
+                    label="Sneaker Type"
+                    name="sneakerType"
+                    autoComplete="sneakerType"
+                />
+                </Grid>
             </Grid>
             <Button
               type="submit"

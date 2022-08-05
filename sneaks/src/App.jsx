@@ -5,7 +5,7 @@ import Yeezy from './components/Yeezy';
 import Dunk from './components/Dunk';
 import AirMax from './components/AirMax';
 import {Container} from '@mui/material';
-import {Employee} from "./pages/Employee";
+import {Employee} from "./pages/Sneakerhead";
 
 
 const App = () => {

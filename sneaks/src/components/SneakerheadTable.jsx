@@ -1,5 +1,5 @@
 import { useEffect, useState} from 'react';
-import * as employeeService from '../services/EmployeeService';
+import * as sneakerService from '../services/SneakerService';
 import {
     Table,
     TableBody,
@@ -9,13 +9,13 @@ import {
   } from '@mui/material';
   
 export const EmployeeTable = () => {
-    const [employees, setEmployees]= useState([]);
+    const [sneakers, setSneakers]= useState([]);
     
 
     useEffect(()=> {
-        employeeService.getAllEmployees()
+        sneakerService.getAllSneakers()
         .then(res => {
-            setEmployees(res.data);
+            setSneakers(res.data);
         })
     }, [])
   
@@ -56,35 +56,35 @@ export const EmployeeTable = () => {
                 </TableHead>
                 <TableBody>
                     {
-                        employees.map((employee)=> {
+                        sneakers.map((sneaker)=> {
                             return(
                                 <TableRow
                                     hover
-                                    key={employee.id}
+                                    key={sneaker.id}
                                 >
                                     <TableCell>
-                                        {employee.id}
+                                        {sneaker.id}
                                     </TableCell>
                                     <TableCell>
-                                        {employee.firstName}
+                                        {sneaker.firstName}
                                     </TableCell>
                                     <TableCell>
-                                        {employee.lastName}
+                                        {sneaker.lastName}
                                     </TableCell>
                                     <TableCell>
-                                        {employee.email}
+                                        {sneaker.email}
                                     </TableCell>
                                     <TableCell>
-                                        {employee.street}
+                                        {sneaker.street}
                                     </TableCell>
                                     <TableCell>
-                                        {employee.city}
+                                        {sneaker.city}
                                     </TableCell>
                                     <TableCell>
-                                        {employee.state}
+                                        {sneaker.state}
                                     </TableCell>
                                     <TableCell>
-                                        {employee.zip}
+                                        {sneaker.zip}
                                     </TableCell>
                                     
                                 </TableRow>

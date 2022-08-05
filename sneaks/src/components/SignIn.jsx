@@ -3,12 +3,9 @@ import Grid from '@mui/material/Grid';
 import { Avatar, Button, Paper, TextField, Typography, Link, Stack, Divider } from '@mui/material';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import {useNavigate } from "react-router-dom";
-import * as employeeService from '../services/EmployeeService';
+import * as sneakerService from '../services/SneakerService';
 import { useState } from "react";
 import SneakerMenu from './SneakerMenu';
-
-
-
 
 
 function Copyright(props) {
@@ -34,23 +31,26 @@ const SignIn = () => {
   const [city, setCity] = useState('')
   const [state, setState] = useState('')
   const [zip, setZip] = useState('')
+  const [sneakerType, setSneakerType] = useState('')
 
   //added
   const handleSubmit = (event) => {
+    console.log("submitted")
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    const employee = {
+    const sneaker = {
       firstName: data.get('firstName'),
       lastName: data.get('lastName'),
-      email:data.get('email'),
-      street:data.get('street'),
-      city:data.get('city'),
-      state:data.get('state'),
-      zip:data.get('zip')
+      email: data.get('email'),
+      street: data.get('street'),
+      city: data.get('city'),
+      state: data.get('state'),
+      zip: data.get('zip'),
+      sneakerType: data.get('sneakerType')
     };
 
     //added
-    employeeService.createEmployee(employee)
+    sneakerService.createSneaker(sneaker)
     .then(response => {
       navigate("/");
     })
@@ -82,7 +82,7 @@ const SignIn = () => {
 
 
     return(
-        <Grid>
+        <Grid >
             <Paper elevation={10} style={paperStyle} onSubmit={handleSubmit}>
                 <Grid align="center">
                 <Avatar style={avatarStyle}><DirectionsRunIcon /></Avatar>
@@ -216,6 +216,24 @@ const SignIn = () => {
                     autoComplete="zip"
                 />
                 </Grid>
+                <Grid item xs={12} sm={6}>
+              <TextField
+                  // required
+                  // id="Zip"
+                  // label="Zip"
+                  // name="Zip"
+                  // autoComplete="Zip"
+
+                    required
+                    fullWidth
+                    id="sneakerType"
+                    value={sneakerType}
+                    onChange= {(e) => setSneakerType(e.target.value)}
+                    label="Sneaker Type"
+                    name="sneakerType"
+                    autoComplete="sneakerType"
+                />
+                </Grid>
               </Grid>
               <Divider style={divide}/>
               <SneakerMenu />
@@ -230,14 +248,15 @@ const SignIn = () => {
                     variant="contained" 
                     style={btnstyle}
                     size='medium'
-                    onSubmit={handleSubmit}
+                   
                 > 
                     Submit Request
                 </Button>
                 </Stack>
                 
             </Paper>
-            <Copyright sx={{ mt: 5 }} />
+            <Copyright sx={{ mt: 5 }}/>
+            
         </Grid>
         
     )
