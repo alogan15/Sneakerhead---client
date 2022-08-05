@@ -86,6 +86,9 @@ export const EmployeeTable = () => {
                                     <TableCell>
                                         {sneaker.zip}
                                     </TableCell>
+                                    <TableCell>
+                                        {sneaker.sneakerType}
+                                    </TableCell>
                                     
                                 </TableRow>
                             ) 

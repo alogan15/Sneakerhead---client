@@ -9,14 +9,19 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import * as sneakerService from '../services/EmployeeService';
+import * as sneakerService from '../services/SneakerService';
 import {useNavigate } from "react-router-dom";
 
 
 const theme = createTheme();
+const textfield={
+  margin: '10px',
+  color:'black'
+}
 
-export const Update = () => {
+const Update = () => {
   const navigate = useNavigate();
+  const {id} = useParams();
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
@@ -200,3 +205,5 @@ export const Update = () => {
     </ThemeProvider>
     )
   };
+
+  export default Update;

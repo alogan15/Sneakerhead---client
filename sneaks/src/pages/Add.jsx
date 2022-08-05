@@ -13,6 +13,10 @@ import * as sneakerService from '../services/SneakerService';
 import {useNavigate } from "react-router-dom";
 
 const theme = createTheme();
+const textfield={
+  margin: '10px',
+  color:'black'
+}
 
 export function Add() {
   const navigate = useNavigate();
@@ -39,6 +43,7 @@ export function Add() {
       zip: data.get('zip'),
       sneakerType: data.get('sneakerType')
     };
+
 
     sneakerService.createSneaker(sneaker)
     .then(response => {
@@ -102,7 +107,6 @@ export function Add() {
                 />
               </Grid>
               <TextField 
-             
                     style={textfield} 
                     required
                     fullWidth
@@ -118,7 +122,6 @@ export function Add() {
                 <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                 <TextField
-
                     required
                     fullWidth
                     id="city"
@@ -131,7 +134,6 @@ export function Add() {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-
                     required
                     fullWidth
                     id="state"
@@ -144,7 +146,6 @@ export function Add() {
               </Grid>
               <Grid item xs={12} sm={6}>
               <TextField
-
                     required
                     fullWidth
                     id="zip"
@@ -156,8 +157,7 @@ export function Add() {
                 />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-              <TextField
-                
+              <TextField               
                     required
                     fullWidth
                     id="sneakerType"
@@ -177,7 +177,6 @@ export function Add() {
             >
              Save
             </Button>
-
           </Box>
         </Box>
       </Container>

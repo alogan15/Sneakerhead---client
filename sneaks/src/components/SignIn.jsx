@@ -1,11 +1,13 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
 import { Avatar, Button, Paper, TextField, Typography, Link, Stack, Divider } from '@mui/material';
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import {useNavigate } from "react-router-dom";
 import * as sneakerService from '../services/SneakerService';
 import { useState } from "react";
 import SneakerMenu from './SneakerMenu';
+import { useParams } from "react-router-dom";
 
 
 function Copyright(props) {
@@ -24,6 +26,7 @@ function Copyright(props) {
 const SignIn = () => {
   //added
   const navigate = useNavigate();
+  const {id} = useParams();
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
@@ -82,20 +85,16 @@ const SignIn = () => {
 
 
     return(
+      <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
         <Grid >
-            <Paper elevation={10} style={paperStyle} onSubmit={handleSubmit}>
+            <Paper elevation={10} style={paperStyle} >
                 <Grid align="center">
                 <Avatar style={avatarStyle}><DirectionsRunIcon /></Avatar>
                 <h4>Sneakerhead</h4>
                 </Grid> 
                 <Grid container spacing={2}>
                 <TextField 
-                    // label='First Name' 
-                    // placeholder='Enter First Name'
                     style={textfield} 
-                    // fullWidth 
-                    // required
-
                     autoComplete="given-name"
                     name="firstName"
                     required
@@ -108,12 +107,7 @@ const SignIn = () => {
                   >
                 </TextField>  
                 <TextField 
-                    // label='Last Name' 
-                    // placeholder='Enter Last Name'
                     style={textfield} 
-                    // fullWidth 
-                    // required
-
                     required
                     fullWidth
                     id="lastName"
@@ -125,12 +119,7 @@ const SignIn = () => {
                   >
                 </TextField>   
                 <TextField 
-                    // label='Email' 
-                    // placeholder='Enter Email'
                     style={textfield} 
-                    // fullWidth 
-                    // required
-                    
                     required
                     fullWidth
                     id="email"
@@ -142,12 +131,7 @@ const SignIn = () => {
                 >
                 </TextField>    
                 <TextField 
-                    // label='Street' 
-                    // placeholder='Enter Street' 
                     style={textfield} 
-                    // fullWidth 
-                    // required
-                    
                     required
                     fullWidth
                     id="street"
@@ -162,14 +146,6 @@ const SignIn = () => {
                 <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                 <TextField
-                  // autoComplete="given-name"
-                  // name="City"
-                  // required
-                  // id="City"
-                  // label="City"
-                  // autoFocus
-
-                 
                     required
                     fullWidth
                     id="city"
@@ -182,12 +158,6 @@ const SignIn = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  // required
-                  // id="State"
-                  // label="State"
-                  // name="State"
-                  // autoComplete="State"
-
                     required
                     fullWidth
                     id="state"
@@ -200,12 +170,6 @@ const SignIn = () => {
               </Grid>
               <Grid item xs={12} sm={6}>
               <TextField
-                  // required
-                  // id="Zip"
-                  // label="Zip"
-                  // name="Zip"
-                  // autoComplete="Zip"
-
                     required
                     fullWidth
                     id="zip"
@@ -218,12 +182,6 @@ const SignIn = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
               <TextField
-                  // required
-                  // id="Zip"
-                  // label="Zip"
-                  // name="Zip"
-                  // autoComplete="Zip"
-
                     required
                     fullWidth
                     id="sneakerType"
@@ -258,7 +216,7 @@ const SignIn = () => {
             <Copyright sx={{ mt: 5 }}/>
             
         </Grid>
-        
+        </Box>
     )
 }
 

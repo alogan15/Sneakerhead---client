@@ -6,6 +6,8 @@ import Dunk from './components/Dunk';
 import AirMax from './components/AirMax';
 import {Container} from '@mui/material';
 import {Employee} from "./pages/Sneakerhead";
+import Update from './pages/Update';
+// import { Add } from './pages/Add';
 
 
 const App = () => {
@@ -14,7 +16,13 @@ const App = () => {
       <Container maxWidth="md">
       <Router>
         <Routes>
-          <Route path="/" element={<Employee />} />
+              <Route path="/" element={<Employee />} />
+
+
+              <Route path="/update/:id" element={<Update />} />
+              
+
+              {/* <Route path="/add" element={<Add />} /> */}
          
         
               <Route path="/SignIn" element={<SignIn />} />
