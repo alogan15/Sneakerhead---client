@@ -1,5 +1,5 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
+
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -8,38 +8,33 @@ import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
+
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
+
 import SneakerSize from './SneakerSize';
 
+import Navbar from '../Toolbar';
 
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="text.secondary" align="center">
-//       {'Copyright © '}
-//       <Link color="inherit" href="https://goat.com/">
-//         Sneakerhead
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
 
-const cards = [1,2,3];
+
 
 const theme = createTheme();
 
-const nav={
-    backgroundColor:'black'
-}
 
 const btn={
     color:'black'
+}
+
+const text={
+  color:'black'
+}
+
+const image={
+  height: '100px',
+  width: 'auto'
 }
 
 const navbtn={
@@ -49,12 +44,9 @@ const navbtn={
   justifyContent:'right'
 }
 
-const Jordan = () => {
-//   const [value, setValue] = React.useState(0);
 
-// const handleChange = (event, newValue) => {
-//     setValue(newValue);
-//   };
+
+const Jordan = () => {
 
 
 
@@ -62,15 +54,7 @@ const Jordan = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative" style={nav}>
-        <Toolbar>
-        <DirectionsRunIcon />
-          <Typography variant="h6" noWrap marginLeft="20px">
-            Sneakerhead
-          </Typography>
-
-        </Toolbar>
-      </AppBar>
+      <Navbar />
       <main>
         {/* Hero unit */}
         <Box
@@ -96,58 +80,186 @@ const Jordan = () => {
             
           </Container>
         </Box>
-        <Container sx={{ py: 8 }} maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                >
-                  <CardMedia
-                    component="img"
-                    sx={{
-                      // 16:9
-                      pt: '56.25%',
-                    }}
-                    image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/Jordan1.jpg")}
-                    
-                  />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Air Jordan
-                    </Typography>
-                    <Typography>
-                    Air Jordan 1 Retro High OG 'Patent Bred'
-                    </Typography>
-                    <Typography align="center" paddingTop="7px">
-                      <b>
-                        $2500
-                      </b>
-                    </Typography>
-                  </CardContent>
-                  <CardActions alignContent="center">
-                    <Button size="small" style={btn}>View</Button>
-                    <SneakerSize />
-                    <Button size="small" style={btn}>Cart</Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
+        <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        <Grid item xs={6} md={4}>
+        <Card sx={{ maxWidth: 500 }}>
+        <CardMedia
+        component="img"
+        style={image}
+        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/jordans/Jordan1.jpg")}
+        alt="Jordan"
+      />
+      <CardContent>
+        
+        <Typography variant="body2" style={text}>
+        Air Jordan 1 Retro High OG 
+        </Typography>
+        <Typography paddingTop="7px">
+          <b>
+            $570
+          </b>
+        </Typography>
+      </CardContent>
+      
+      <CardActions alignContent="center">
+        <Button size="small" style={btn}>View</Button>
+        <SneakerSize />
+        <Button size="small" style={btn}>Cart</Button>
+      </CardActions>
+      
+    </Card>
+        </Grid>
+        <Grid item xs={6} md={4}>
+        <Card sx={{ maxWidth: 500 }}>
+        <CardMedia
+        component="img"
+        style={image}
+        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/jordans/elevens.webp")}
+        alt="Jordan"
+      />
+      <CardContent>
+        
+        <Typography variant="body2" style={text}>
+        Air Jordan 11 Retro 'Bred'
+        </Typography>
+        <Typography paddingTop="7px">
+          <b>
+            $450
+          </b>
+        </Typography>
+      </CardContent>
+      <CardActions alignContent="center">
+        <Button size="small" style={btn}>View</Button>
+        <SneakerSize />
+        <Button size="small" style={btn}>Cart</Button>
+      </CardActions>
+    </Card>
+        </Grid>
+        <Grid item xs={6} md={4}>
+        <Card sx={{ maxWidth: 500 }}>
+        <CardMedia
+        component="img"
+        style={image}
+        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/jordans/ones.webp")}
+        alt="Jordan"
+      />
+      <CardContent>
+        
+        <Typography variant="body2" style={text}>
+        Air Jordan 6 Retro 'Infrared'
+        </Typography>
+        <Typography paddingTop="7px">
+          <b>
+            $290
+          </b>
+        </Typography>
+      </CardContent>
+      
+      <CardActions alignContent="center">
+        <Button size="small" style={btn}>View</Button>
+        <SneakerSize />
+        <Button size="small" style={btn}>Cart</Button>
+      </CardActions>
+      
+    </Card>
+        </Grid>
+        <Grid item xs={6} md={4}>
+        <Card sx={{ maxWidth: 500 }}>
+        <CardMedia
+        component="img"
+        style={image}
+        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/jordans/sixs.webp")}
+        alt="Jordan"
+      />
+      <CardContent>
+        
+        <Typography variant="body2" style={text}>
+        Air Jordan 6 Retro 'Infrared'
+        </Typography>
+        <Typography paddingTop="7px">
+          <b>
+            $340
+          </b>
+        </Typography>
+      </CardContent>
+      <CardActions alignContent="center">
+        <Button size="small" style={btn}>View</Button>
+        <SneakerSize />
+        <Button size="small" style={btn}>Cart</Button>
+      </CardActions>
+    </Card>
+        </Grid>
+
+        <Grid item xs={6} md={4}>
+        <Card sx={{ maxWidth: 500 }}>
+        <CardMedia
+        component="img"
+        style={image}
+        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/jordans/twos.webp")}
+        alt="Jordan"
+      />
+      <CardContent>
        
+        <Typography variant="body2" style={text}>
+        Air Jordan 2 Retro 
+        </Typography>
+        <Typography paddingTop="7px">
+          <b>
+            $400
+          </b>
+        </Typography>
+      </CardContent>
+      <CardActions alignContent="center">
+        <Button size="small" style={btn}>View</Button>
+        <SneakerSize />
+        <Button size="small" style={btn}>Cart</Button>
+      </CardActions>
+    </Card>
+        </Grid>
+
+        <Grid item xs={6} md={4}>
+        <Card sx={{ maxWidth: 500 }}>
+        <CardMedia
+        component="img"
+        style={image}
+        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/jordans/threes.webp")}
+        alt="Jordan"
+      />
+      <CardContent>
+        
+        <Typography variant="body2" style={text}>
+        Air Jordan 3 Retro '88'
+        </Typography>
+        <Typography paddingTop="7px">
+          <b>
+            $670
+          </b>
+        </Typography>
+      </CardContent>
+      <CardActions alignContent="center">
+        <Button size="small" style={btn}>View</Button>
+        <SneakerSize />
+        <Button size="small" style={btn}>Cart</Button>
+      </CardActions>
+    </Card>
+        </Grid>
+      </Grid>
+    </Box>
         
       </main>
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-       
+      <Link to="/">
+          <Button fullWidth variant="contained" style={navbtn}>Home</Button>
+        </Link>
+        <Link to="/SignIn">
+          <Button fullWidth variant="contained" style={navbtn}>Back</Button>
+        </Link>
         {/* <Copyright /> */}
       </Box>
       {/* End footer */}
-        <Link to="/">
-          <Button fullWidth variant="contained" style={navbtn}>Back</Button>
-        </Link>
+      
     </ThemeProvider>
   );
 }

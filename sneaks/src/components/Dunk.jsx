@@ -1,5 +1,4 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -8,38 +7,29 @@ import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-// import Link from '@mui/material/Link';
 import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import SneakerSize from './SneakerSize';
+import Navbar from '../Toolbar';
 
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="text.secondary" align="center">
-//       {'Copyright © '}
-//       <Link color="inherit" href="https://goat.com/">
-//         Sneakerhead
-//       </Link>{' '}
-//       {new Date().getFullYear()}
-//       {'.'}
-//     </Typography>
-//   );
-// }
 
-const cards = [1,2,3];
 
 const theme = createTheme();
 
-const nav={
-    backgroundColor:'black'
-}
 
 const btn={
     color:'black'
+}
+
+const text={
+  color:'black'
+}
+
+const image={
+  height: '100px',
+  width: 'auto'
 }
 
 const navbtn={
@@ -53,14 +43,7 @@ export default function Dunk() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AppBar position="relative" style={nav}>
-        <Toolbar>
-        <DirectionsRunIcon />
-          <Typography variant="h6" noWrap marginLeft="20px">
-            Sneakerhead
-          </Typography>
-        </Toolbar>
-      </AppBar>
+      <Navbar />
       <main>
         {/* Hero unit */}
         <Box
@@ -86,57 +69,188 @@ export default function Dunk() {
             
           </Container>
         </Box>
-        <Container sx={{ py: 8 }} maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                >
-                  <CardMedia
-                    component="img"
-                    sx={{
-                      // 16:9
-                      pt: '56.25%',
-                    }}
-                    image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/Dunk.jpg")}
-                    
-                  />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Nike Dunk
-                    </Typography>
-                    <Typography>
-                    Dunk High 'White Black'
-                    </Typography>
-                    <Typography align="center" paddingTop="7px">
-                      <b>
-                        $290
-                      </b>
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" style={btn}>View</Button>
-                    <SneakerSize />
-                    <Button size="small" style={btn}>Cart</Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
+
+
+        <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
+        <Grid item xs={6} md={4}>
+        <Card sx={{ maxWidth: 500 }}>
+        <CardMedia
+        component="img"
+        style={image}
+        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/dunks/blue42.webp")}
+        alt="dunk"
+      />
+      <CardContent>
+        
+        <Typography variant="body2" style={text}>
+        Dunk Low GS 'Jackie Robinson'
+        </Typography>
+        <Typography paddingTop="7px">
+          <b>
+            $250
+          </b>
+        </Typography>
+      </CardContent>
+      
+      <CardActions alignContent="center">
+        <Button size="small" style={btn}>View</Button>
+        <SneakerSize />
+        <Button size="small" style={btn}>Cart</Button>
+      </CardActions>
+      
+    </Card>
+        </Grid>
+        <Grid item xs={6} md={4}>
+        <Card sx={{ maxWidth: 500 }}>
+        <CardMedia
+        component="img"
+        style={image}
+        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/dunks/blues.webp")}
+        alt="dunk"
+      />
+      <CardContent>
+        
+        <Typography variant="body2" style={text}>
+        Dunk Low 'Valerian Blue'
+        </Typography>
+        <Typography paddingTop="7px">
+          <b>
+            $250
+          </b>
+        </Typography>
+      </CardContent>
+      <CardActions alignContent="center">
+        <Button size="small" style={btn}>View</Button>
+        <SneakerSize />
+        <Button size="small" style={btn}>Cart</Button>
+      </CardActions>
+    </Card>
+        </Grid>
+        <Grid item xs={6} md={4}>
+        <Card sx={{ maxWidth: 500 }}>
+        <CardMedia
+        component="img"
+        style={image}
+        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/dunks/burgundy.webp")}
+        alt="dunk"
+      />
+      <CardContent>
+        
+        <Typography variant="body2" style={text}>
+        Dunk Low 'Team Red'
+        </Typography>
+        <Typography paddingTop="7px">
+          <b>
+            $250
+          </b>
+        </Typography>
+      </CardContent>
+      
+      <CardActions alignContent="center">
+        <Button size="small" style={btn}>View</Button>
+        <SneakerSize />
+        <Button size="small" style={btn}>Cart</Button>
+      </CardActions>
+      
+    </Card>
+        </Grid>
+        <Grid item xs={6} md={4}>
+        <Card sx={{ maxWidth: 500 }}>
+        <CardMedia
+        component="img"
+        style={image}
+        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/dunks/cowdunk.webp")}
+        alt="Yeezy"
+      />
+      <CardContent>
+        
+        <Typography variant="body2" style={text}>
+        Ben & Jerry's x Dunk Low SB
+        </Typography>
+        <Typography paddingTop="7px">
+          <b>
+            $590
+          </b>
+        </Typography>
+      </CardContent>
+      <CardActions alignContent="center">
+        <Button size="small" style={btn}>View</Button>
+        <SneakerSize />
+        <Button size="small" style={btn}>Cart</Button>
+      </CardActions>
+    </Card>
+        </Grid>
+
+        <Grid item xs={6} md={4}>
+        <Card sx={{ maxWidth: 500 }}>
+        <CardMedia
+        component="img"
+        style={image}
+        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/dunks/dunkblk.webp")}
+        alt="Yeezy"
+      />
+      <CardContent>
+       
+        <Typography variant="body2" style={text}>
+        Dunk Low GS 'Black White'
+        </Typography>
+        <Typography paddingTop="7px">
+          <b>
+            $290
+          </b>
+        </Typography>
+      </CardContent>
+      <CardActions alignContent="center">
+        <Button size="small" style={btn}>View</Button>
+        <SneakerSize />
+        <Button size="small" style={btn}>Cart</Button>
+      </CardActions>
+    </Card>
+        </Grid>
+
+        <Grid item xs={6} md={4}>
+        <Card sx={{ maxWidth: 500 }}>
+        <CardMedia
+        component="img"
+        style={image}
+        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/dunks/rainbow.webp")}
+        alt="Yeezy"
+      />
+      <CardContent>
+        
+        <Typography variant="body2" style={text}>
+        Dunk Low SE 'Safari Mix'
+        </Typography>
+        <Typography paddingTop="7px">
+          <b>
+            $400
+          </b>
+        </Typography>
+      </CardContent>
+      <CardActions alignContent="center">
+        <Button size="small" style={btn}>View</Button>
+        <SneakerSize />
+        <Button size="small" style={btn}>Cart</Button>
+      </CardActions>
+    </Card>
+        </Grid>
+      </Grid>
+    </Box>
        
       </main>
       {/* Footer */}
       <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-       
+      <Link to="/">
+          <Button fullWidth variant="contained" style={navbtn}>Home</Button>
+        </Link>
+        <Link to="/SignIn">
+          <Button fullWidth variant="contained" style={navbtn}>Back</Button>
+        </Link>
         {/* <Copyright /> */}
       </Box>
       {/* End footer */}
-      <Link to="/">
-          <Button fullWidth variant="contained" style={navbtn}>Back</Button>
-        </Link>
+      
     </ThemeProvider>
   );
 }

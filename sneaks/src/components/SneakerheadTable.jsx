@@ -10,7 +10,7 @@ import {
   
 export const EmployeeTable = () => {
     const [sneakers, setSneakers]= useState([]);
-    
+   
 
     useEffect(()=> {
         sneakerService.getAllSneakers()
@@ -19,6 +19,7 @@ export const EmployeeTable = () => {
         })
     }, [])
   
+
 
     return (
         <div >
@@ -49,8 +50,11 @@ export const EmployeeTable = () => {
                     <TableCell>
                         Zip
                     </TableCell>
-                    <TableCell align="right">
+                    <TableCell>
                         Cart
+                    </TableCell>
+                    <TableCell align="right">
+                        Size
                     </TableCell>
                 </TableRow>
                 </TableHead>
@@ -89,7 +93,9 @@ export const EmployeeTable = () => {
                                     <TableCell>
                                         {sneaker.sneakerType}
                                     </TableCell>
-                                    
+                                    <TableCell>
+                                        {sneaker.sneakerSize}
+                                    </TableCell>
                                 </TableRow>
                             ) 
                         })

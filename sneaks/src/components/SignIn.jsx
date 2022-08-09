@@ -35,6 +35,7 @@ const SignIn = () => {
   const [state, setState] = useState('')
   const [zip, setZip] = useState('')
   const [sneakerType, setSneakerType] = useState('')
+  const [sneakerSize, setSneakerSize] = useState('')
 
   //added
   const handleSubmit = (event) => {
@@ -49,7 +50,8 @@ const SignIn = () => {
       city: data.get('city'),
       state: data.get('state'),
       zip: data.get('zip'),
-      sneakerType: data.get('sneakerType')
+      sneakerType: data.get('sneakerType'),
+      sneakerSize: data.get('sneakerSize')
     };
 
     //added
@@ -88,11 +90,14 @@ const SignIn = () => {
       <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
         <Grid >
             <Paper elevation={10} style={paperStyle} >
+
                 <Grid align="center">
                 <Avatar style={avatarStyle}><DirectionsRunIcon /></Avatar>
                 <h4>Sneakerhead</h4>
                 </Grid> 
-                <Grid container spacing={2}>
+
+                <Grid container spacing={1}>
+                <Grid item xs={12} sm={6}>
                 <TextField 
                     style={textfield} 
                     autoComplete="given-name"
@@ -105,7 +110,11 @@ const SignIn = () => {
                     label="First Name"
                     autoFocus
                   >
+                  
                 </TextField>  
+                </Grid>
+
+                <Grid item xs={12} sm={6}>
                 <TextField 
                     style={textfield} 
                     required
@@ -117,7 +126,10 @@ const SignIn = () => {
                     name="lastName"
                     autoComplete="family-name"
                   >
-                </TextField>   
+                </TextField>  
+                </Grid>
+
+                <Grid item xs={12}>
                 <TextField 
                     style={textfield} 
                     required
@@ -129,7 +141,10 @@ const SignIn = () => {
                     name="email"
                     autoComplete="email"
                 >
-                </TextField>    
+                </TextField>  
+                </Grid>
+
+                <Grid item xs={12}>
                 <TextField 
                     style={textfield} 
                     required
@@ -142,10 +157,11 @@ const SignIn = () => {
                     autoComplete="street"
                 >
                 </TextField>
-                </Grid>  
-                <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
+                </Grid>
+
+                <Grid item xs={12}>
                 <TextField
+                    style={textfield} 
                     required
                     fullWidth
                     id="city"
@@ -156,8 +172,10 @@ const SignIn = () => {
                     autoComplete="city"
                 />
               </Grid>
-              <Grid item xs={12} sm={6}>
+
+              <Grid item xs={12}>
                 <TextField
+                    style={textfield} 
                     required
                     fullWidth
                     id="state"
@@ -168,8 +186,10 @@ const SignIn = () => {
                     autoComplete="state"
                 />
               </Grid>
+
               <Grid item xs={12} sm={6}>
               <TextField
+                    style={textfield} 
                     required
                     fullWidth
                     id="zip"
@@ -180,22 +200,40 @@ const SignIn = () => {
                     autoComplete="zip"
                 />
                 </Grid>
+                </Grid>
+
+                <Grid container spacing={1}>
                 <Grid item xs={12} sm={6}>
               <TextField
+                    style={textfield} 
                     required
                     fullWidth
                     id="sneakerType"
                     value={sneakerType}
                     onChange= {(e) => setSneakerType(e.target.value)}
-                    label="Sneaker Type"
+                    label="Sneaker"
                     name="sneakerType"
                     autoComplete="sneakerType"
                 />
                 </Grid>
-              </Grid>
+                
+                <Grid item xs={12} sm={6}>
+                <TextField    
+                    style={textfield}            
+                    required
+                    fullWidth
+                    id="sneakerSize"
+                    value={sneakerSize}
+                    onChange= {(e) => setSneakerSize(e.target.value)}
+                    label="Size"
+                    name="sneakerSize"
+                    autoComplete="sneakerSize"
+                />
+                </Grid>
+                </Grid>
+              
               <Divider style={divide}/>
               <SneakerMenu />
-              {/* <SneakerSize /> */}
 
               <Divider style={divide}/>
               

@@ -49,7 +49,8 @@ const StyledMenu = styled((props) => (
 
 const dropdown={
 backgroundColor:'black',
-marginTop:'5px'
+marginTop:'5px',
+
 }
 
 export default function SneakerSize() {
@@ -74,6 +75,7 @@ export default function SneakerSize() {
         disableElevation
         onClick={handleClick}
         endIcon={<KeyboardArrowDownIcon />}
+        size='small'
         style={dropdown}
       >
         Size
@@ -89,41 +91,55 @@ export default function SneakerSize() {
       >
         
         <MenuItem onClick={handleClose} disableRipple>
-          
           5
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          
+          5.5
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple>
           6
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple>
+          6.5
         </MenuItem>
         
         <MenuItem onClick={handleClose} disableRipple>
-          
           7
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          
+          7.5
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple>
           8
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          
+          8.5
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple>
           9
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          
+          9.5
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple>
           10
         </MenuItem>
-        
         <MenuItem onClick={handleClose} disableRipple>
-          
+          10.5
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple>
           11
         </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          
+          11.5
+        </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple> 
           12
         </MenuItem>
+        <MenuItem onClick={handleClose} disableRipple>  
+          12.5
+        </MenuItem>
         <MenuItem onClick={handleClose} disableRipple>
-          
           13
         </MenuItem>
       </StyledMenu>

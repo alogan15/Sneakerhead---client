@@ -30,6 +30,7 @@ const Update = () => {
   const [state, setState] = useState('')
   const [zip, setZip] = useState('')
   const [sneakerType, setSneakerType] = useState('')
+  const [sneakerSize, setSneakerSize] = useState('')
 
   useEffect(()=> {
     sneakerService.getById(id)
@@ -43,6 +44,7 @@ const Update = () => {
        setState(user.state);
        setZip(user.zip);
        setSneakerType(user.sneakerType);
+       setSneakerSize(user.sneakerSize);
     })
   },[]);
 
@@ -186,6 +188,16 @@ const Update = () => {
                     label="Sneaker Type"
                     name="sneakerType"
                     autoComplete="sneakerType"
+                />
+                <TextField               
+                    required
+                    fullWidth
+                    id="sneakerSize"
+                    value={sneakerSize}
+                    onChange= {(e) => setSneakerSize(e.target.value)}
+                    label="Sneaker Size"
+                    name="sneakerSize"
+                    autoComplete="sneakerSize"
                 />
                 </Grid>
 

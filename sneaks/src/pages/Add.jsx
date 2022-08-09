@@ -29,6 +29,7 @@ export function Add() {
   const [state, setState] = useState('')
   const [zip, setZip] = useState('')
   const [sneakerType, setSneakerType] = useState('')
+  const [sneakerSize, setSneakerSize] = useState('')
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,7 +42,8 @@ export function Add() {
       city: data.get('city'),
       state: data.get('state'),
       zip: data.get('zip'),
-      sneakerType: data.get('sneakerType')
+      sneakerType: data.get('sneakerType'),
+      sneakerSize: data.get('sneakerSize')
     };
 
 
@@ -168,7 +170,18 @@ export function Add() {
                     autoComplete="sneakerType"
                 />
                 </Grid>
-            </Grid>
+                <TextField               
+                    required
+                    fullWidth
+                    id="sneakerSize"
+                    value={sneakerSize}
+                    onChange= {(e) => setSneakerSize(e.target.value)}
+                    label="Sneaker Size"
+                    name="sneakerSize"
+                    autoComplete="sneakerSize"
+                />
+                </Grid>
+            
             <Button
               type="submit"
               fullWidth
