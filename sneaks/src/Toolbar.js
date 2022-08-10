@@ -11,7 +11,6 @@ const nav={
 }
 
 
-
 function Navbar() {
     return (
         <AppBar position="relative" style={nav}>
@@ -20,7 +19,7 @@ function Navbar() {
           <Typography variant="h6" noWrap marginLeft="20px">
             Sneakerhead
           </Typography>
-          
+
           <SneakerMenu />
 
         </Toolbar>

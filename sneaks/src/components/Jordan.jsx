@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SneakerSize from './SneakerSize';
 import Navbar from '../Toolbar';
+import BottomNav from './BottomNav';
 
 
 const theme = createTheme();
@@ -31,11 +32,7 @@ const image={
   width: 'auto'
 }
 
-const navbtn={
-  backgroundColor:'black',
-  color:'white',
- 
-}
+
 
 
 
@@ -100,7 +97,9 @@ const Jordan = () => {
         <Button size="small" style={btn}>View</Button>
         </Link>
         <SneakerSize />
+        <Link to='/Review'>
         <Button size="small" style={btn}>Cart</Button>
+        </Link>
       </CardActions>
       
     </Card>
@@ -129,7 +128,9 @@ const Jordan = () => {
         <Button size="small" style={btn}>View</Button>
         </Link>
         <SneakerSize />
+        <Link to='/Review'>
         <Button size="small" style={btn}>Cart</Button>
+        </Link>
       </CardActions>
     </Card>
         </Grid>
@@ -158,7 +159,9 @@ const Jordan = () => {
         <Button size="small" style={btn}>View</Button>
         </Link>
         <SneakerSize />
+        <Link to='/Review'>
         <Button size="small" style={btn}>Cart</Button>
+        </Link>
       </CardActions>
       
     </Card>
@@ -187,7 +190,9 @@ const Jordan = () => {
         <Button size="small" style={btn}>View</Button>
         </Link>
         <SneakerSize />
+        <Link to='/Review'>
         <Button size="small" style={btn}>Cart</Button>
+        </Link>
       </CardActions>
     </Card>
         </Grid>
@@ -216,7 +221,9 @@ const Jordan = () => {
         <Button size="small" style={btn}>View</Button>
         </Link>
         <SneakerSize />
+        <Link to='/Review'>
         <Button size="small" style={btn}>Cart</Button>
+        </Link>
       </CardActions>
     </Card>
         </Grid>
@@ -245,7 +252,9 @@ const Jordan = () => {
         <Button size="small" style={btn}>View</Button>
         </Link>
         <SneakerSize />
+        <Link to='/Review'>
         <Button size="small" style={btn}>Cart</Button>
+        </Link>
       </CardActions>
     </Card>
         </Grid>
@@ -254,16 +263,17 @@ const Jordan = () => {
         
       </main>
       {/* Footer */}
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
+      {/* <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
       <Link to="/">
           <Button fullWidth variant="contained" style={navbtn}>Home</Button>
         </Link>
         <Link to="/SignIn">
           <Button fullWidth variant="contained" style={navbtn}>Back</Button>
         </Link>
-        {/* <Copyright /> */}
-      </Box>
-      {/* End footer */}
+       
+      </Box> */}
+     
+     <BottomNav />
       
     </ThemeProvider>
   );

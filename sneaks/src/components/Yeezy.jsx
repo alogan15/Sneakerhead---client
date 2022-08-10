@@ -9,10 +9,10 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SneakerSize from './SneakerSize';
 import Navbar from '../Toolbar';
+import BottomNav from './BottomNav';
 
 
 const theme = createTheme();
@@ -30,11 +30,7 @@ const image={
   height: '100px',
   width: 'auto'
 }
-const navbtn={
-  backgroundColor:'black',
-  color:'white',
- 
-}
+
 
 export default function Yeezy() {
   return (
@@ -238,17 +234,17 @@ export default function Yeezy() {
 
 
       </main>
-      {/* Footer */}
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
+      
+      {/* <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
       <Link to="/">
           <Button fullWidth variant="contained" style={navbtn}>Home</Button>
         </Link>
         <Link to="/SignIn">
           <Button fullWidth variant="contained" style={navbtn}>Back</Button>
         </Link>
-        {/* <Copyright /> */}
-      </Box>
-      {/* End footer */}
+      </Box> */}
+  
+    <BottomNav />
         
     </ThemeProvider>
   );

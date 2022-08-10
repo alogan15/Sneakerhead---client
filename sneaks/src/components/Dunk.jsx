@@ -9,10 +9,11 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SneakerSize from './SneakerSize';
 import Navbar from '../Toolbar';
+import BottomNav from './BottomNav';
+
 
 
 
@@ -32,11 +33,7 @@ const image={
   width: 'auto'
 }
 
-const navbtn={
-  backgroundColor:'black',
-  color:'white',
-  
-}
+
 
 export default function Dunk() {
   return (
@@ -238,18 +235,23 @@ export default function Dunk() {
     </Box>
        
       </main>
-      {/* Footer */}
-      <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
+      
+     
+      {/* <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
       <Link to="/">
           <Button fullWidth variant="contained" style={navbtn}>Home</Button>
         </Link>
         <Link to="/SignIn">
           <Button fullWidth variant="contained" style={navbtn}>Back</Button>
         </Link>
-        {/* <Copyright /> */}
-      </Box>
-      {/* End footer */}
-      
+        <Link to="/SignIn">
+          <Button fullWidth variant="contained" style={navbtn}>Checkout</Button>
+        </Link>
+      </Box> */}
+
+      <BottomNav />
+     
+
     </ThemeProvider>
   );
 }

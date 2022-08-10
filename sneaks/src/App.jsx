@@ -19,6 +19,8 @@ import Sixes from './jordanViews/Sixes';
 import OnesBlue from './jordanViews/OnesBlue';
 import Twos from './jordanViews/Twos';
 import Threes from './jordanViews/Threes';
+import Checkout from './Checkout/Checkout'
+import Review from './Checkout/Review';
 
 const App = () => {
   return (
@@ -47,6 +49,9 @@ const App = () => {
                 <Route path="/Sixes" element={<Sixes />} /> 
                 <Route path="/Twos" element={<Twos />} /> 
                 <Route path="/Threes" element={<Threes />} /> 
+                              {/* Checkout */}
+                <Route path="/Checkout" element={<Checkout />} />
+                <Route path="/Review" element={<Review />} />
           </Routes>
         </Router>
     </Container>
