@@ -13,8 +13,6 @@ import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import SneakerSize from './SneakerSize';
 import Navbar from '../Toolbar';
-<Navbar />
-
 
 
 
@@ -95,7 +93,9 @@ export default function AirMax() {
       </CardContent>
       
       <CardActions alignContent="center">
+      <Link to="/maximage">
         <Button size="small" style={btn}>View</Button>
+        </Link>
         <SneakerSize />
         <Button size="small" style={btn}>Cart</Button>
       </CardActions>
@@ -122,7 +122,9 @@ export default function AirMax() {
         </Typography>
       </CardContent>
       <CardActions alignContent="center">
+        <Link to="/Kasina">
         <Button size="small" style={btn}>View</Button>
+        </Link>
         <SneakerSize />
         <Button size="small" style={btn}>Cart</Button>
       </CardActions>
@@ -149,7 +151,9 @@ export default function AirMax() {
       </CardContent>
       
       <CardActions alignContent="center">
+        <Link to="/Rainbow">
         <Button size="small" style={btn}>View</Button>
+        </Link>
         <SneakerSize />
         <Button size="small" style={btn}>Cart</Button>
       </CardActions>
@@ -176,7 +180,9 @@ export default function AirMax() {
         </Typography>
       </CardContent>
       <CardActions alignContent="center">
+        <Link to="/Neon">
         <Button size="small" style={btn}>View</Button>
+        </Link>
         <SneakerSize />
         <Button size="small" style={btn}>Cart</Button>
       </CardActions>
@@ -203,7 +209,9 @@ export default function AirMax() {
         </Typography>
       </CardContent>
       <CardActions alignContent="center">
+        <Link to="/OffWhitewhte">
         <Button size="small" style={btn}>View</Button>
+        </Link>
         <SneakerSize />
         <Button size="small" style={btn}>Cart</Button>
       </CardActions>
@@ -230,8 +238,13 @@ export default function AirMax() {
         </Typography>
       </CardContent>
       <CardActions alignContent="center">
+
+        <Link to="/Concepts">
         <Button size="small" style={btn}>View</Button>
+        </Link>
+
         <SneakerSize />
+
         <Button size="small" style={btn}>Cart</Button>
       </CardActions>
     </Card>

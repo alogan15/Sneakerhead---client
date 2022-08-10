@@ -15,7 +15,8 @@ const StyledMenu = styled((props) => (
     }}
     transformOrigin={{
       vertical: 'top',
-      horizontal: 'right',
+      horizontal: 'left',
+      menuPlacement:"auto"
     }}
     {...props}
   />

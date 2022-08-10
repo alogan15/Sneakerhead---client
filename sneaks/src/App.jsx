@@ -4,12 +4,15 @@ import SignIn from './components/SignIn';
 import Yeezy from './components/Yeezy';
 import Dunk from './components/Dunk';
 import AirMax from './components/AirMax';
+import Maximage from './airMaxViews/OffWhiteblk';
 import {Container} from '@mui/material';
 import {Employee} from "./pages/Sneakerhead";
 import Update from './pages/Update';
-
-
-
+import Kasina from './airMaxViews/Kasina';
+import Rainbow from './airMaxViews/Rainbow';
+import Neon from './airMaxViews/Neon';
+import OffWhitewhte from './airMaxViews/OffWhitewhte';
+import Concepts from './airMaxViews/Concepts';
 
 const App = () => {
   return (
@@ -23,7 +26,13 @@ const App = () => {
                 <Route path="/Jordan" element={<Jordan />} />
                 <Route path="/Yeezy" element={<Yeezy />} />
                 <Route path="/Dunk" element={<Dunk />} />
-                <Route path="/AirMax" element={<AirMax />} />            
+                <Route path="/AirMax" element={<AirMax />} />  
+                <Route path="/maximage" element={<Maximage />} />
+                <Route path="/Kasina" element={<Kasina />} />    
+                <Route path="/Rainbow" element={<Rainbow />} />   
+                <Route path="/Neon" element={<Neon />} />  
+                <Route path="/OffWhitewhte" element={<OffWhitewhte />} />  
+                <Route path="/Concepts" element={<Concepts />} />    
           </Routes>
         </Router>
     </Container>

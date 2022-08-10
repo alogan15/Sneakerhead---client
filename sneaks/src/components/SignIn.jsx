@@ -10,6 +10,7 @@ import SneakerMenu from './SneakerMenu';
 import { useParams } from "react-router-dom";
 
 
+
 function Copyright(props) {
     return (
       <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -64,7 +65,7 @@ const SignIn = () => {
 
     const paperStyle={
         padding: "20px",
-        height: '70vh',
+        height: 'auto',
         width: 280,
         margin: "20px auto"
     }
@@ -255,6 +256,10 @@ const SignIn = () => {
             
         </Grid>
         </Box>
+
+
+     
+        
     )
 }
 
