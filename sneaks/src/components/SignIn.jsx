@@ -6,7 +6,7 @@ import DirectionsRunIcon from '@mui/icons-material/DirectionsRun';
 import {useNavigate } from "react-router-dom";
 import * as sneakerService from '../services/SneakerService';
 import { useState } from "react";
-import SneakerMenu from './SneakerMenu';
+import SignInMenu from './SignInMenu';
 import { useParams } from "react-router-dom";
 
 
@@ -85,6 +85,7 @@ const SignIn = () => {
     const divide={
       padding:'10px'
     }
+  
 
 
     return(
@@ -96,7 +97,7 @@ const SignIn = () => {
                 <Avatar style={avatarStyle}><DirectionsRunIcon /></Avatar>
                 <h4>Sneakerhead</h4>
                 </Grid> 
-
+                
                 <Grid container spacing={1}>
                 <Grid item xs={12} sm={6}>
                 <TextField 
@@ -234,7 +235,9 @@ const SignIn = () => {
                 </Grid>
               
               <Divider style={divide}/>
-              <SneakerMenu />
+
+              <SignInMenu />
+              
 
               <Divider style={divide}/>
               

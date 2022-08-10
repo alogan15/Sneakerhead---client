@@ -7,7 +7,8 @@ import Navbar from '../Toolbar';
 const image={
   height: '315px',
   width: 'auto',
-  marginTop:'125px'
+  marginTop:'125px',
+  marginLeft: '150px'
 }
 
 const btn={

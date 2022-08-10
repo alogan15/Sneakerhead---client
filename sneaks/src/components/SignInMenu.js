@@ -52,10 +52,10 @@ const StyledMenu = styled((props) => (
 const dropdown={
 backgroundColor:'black',
 marginTop:'5px',
-marginLeft:'450px'
+
 }
 
-export default function SneakerMenu(props) {
+export default function SignInMenu(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {

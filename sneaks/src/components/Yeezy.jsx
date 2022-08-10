@@ -33,8 +33,7 @@ const image={
 const navbtn={
   backgroundColor:'black',
   color:'white',
-  alignItems:'right',
-  justifyContent:'right'
+ 
 }
 
 export default function Yeezy() {

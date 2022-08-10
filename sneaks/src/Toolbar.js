@@ -6,8 +6,11 @@ import Typography from '@mui/material/Typography';
 
 
 const nav={
-    backgroundColor:'black'
+    backgroundColor:'black',
+    
 }
+
+
 
 function Navbar() {
     return (

@@ -1,5 +1,4 @@
 import * as React from 'react';
-
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -8,17 +7,12 @@ import CardMedia from '@mui/material/CardMedia';
 import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { Link } from 'react-router-dom';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 import SneakerSize from './SneakerSize';
-
 import Navbar from '../Toolbar';
-
-
 
 
 const theme = createTheme();
@@ -40,8 +34,7 @@ const image={
 const navbtn={
   backgroundColor:'black',
   color:'white',
-  alignItems:'right',
-  justifyContent:'right'
+ 
 }
 
 
@@ -103,7 +96,9 @@ const Jordan = () => {
       </CardContent>
       
       <CardActions alignContent="center">
+        <Link to="/OnesRed">
         <Button size="small" style={btn}>View</Button>
+        </Link>
         <SneakerSize />
         <Button size="small" style={btn}>Cart</Button>
       </CardActions>
@@ -130,7 +125,9 @@ const Jordan = () => {
         </Typography>
       </CardContent>
       <CardActions alignContent="center">
+        <Link to="/Elevens">
         <Button size="small" style={btn}>View</Button>
+        </Link>
         <SneakerSize />
         <Button size="small" style={btn}>Cart</Button>
       </CardActions>
@@ -147,7 +144,7 @@ const Jordan = () => {
       <CardContent>
         
         <Typography variant="body2" style={text}>
-        Air Jordan 6 Retro 'Infrared'
+        Air Jordan 1 Retro High OG 
         </Typography>
         <Typography paddingTop="7px">
           <b>
@@ -157,7 +154,9 @@ const Jordan = () => {
       </CardContent>
       
       <CardActions alignContent="center">
+        <Link to="/OnesBlue">
         <Button size="small" style={btn}>View</Button>
+        </Link>
         <SneakerSize />
         <Button size="small" style={btn}>Cart</Button>
       </CardActions>
@@ -184,7 +183,9 @@ const Jordan = () => {
         </Typography>
       </CardContent>
       <CardActions alignContent="center">
+        <Link to="/Sixes">
         <Button size="small" style={btn}>View</Button>
+        </Link>
         <SneakerSize />
         <Button size="small" style={btn}>Cart</Button>
       </CardActions>
@@ -211,7 +212,9 @@ const Jordan = () => {
         </Typography>
       </CardContent>
       <CardActions alignContent="center">
+        <Link to="/Twos">
         <Button size="small" style={btn}>View</Button>
+        </Link>
         <SneakerSize />
         <Button size="small" style={btn}>Cart</Button>
       </CardActions>
@@ -238,7 +241,9 @@ const Jordan = () => {
         </Typography>
       </CardContent>
       <CardActions alignContent="center">
+        <Link to="/Threes">
         <Button size="small" style={btn}>View</Button>
+        </Link>
         <SneakerSize />
         <Button size="small" style={btn}>Cart</Button>
       </CardActions>

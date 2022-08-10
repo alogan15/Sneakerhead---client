@@ -18,18 +18,18 @@ const btn={
   marginTop:"50px"
 }
 
-export default function Neon() {
+export default function OnesRed() {
   return (
     <div>
       <Navbar />
       <CardMedia
         component="img"
         style={image}
-        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/airmax/neon.webp")}
-        alt="AirMax"
+        image={require("/Users/andrelogan/dev/Sneakerhead---client/sneaks/src/jordans/elevens.webp")}
+        alt="Jordan"
       />
 
-      <Link to="/AirMax">
+      <Link to="/Jordan">
       <Button variant="contained" size="small" style={btn}>
         Back
       </Button>

@@ -13,6 +13,12 @@ import Rainbow from './airMaxViews/Rainbow';
 import Neon from './airMaxViews/Neon';
 import OffWhitewhte from './airMaxViews/OffWhitewhte';
 import Concepts from './airMaxViews/Concepts';
+import OnesRed from './jordanViews/OnesRed';
+import Elevens from './jordanViews/Elevens';
+import Sixes from './jordanViews/Sixes';
+import OnesBlue from './jordanViews/OnesBlue';
+import Twos from './jordanViews/Twos';
+import Threes from './jordanViews/Threes';
 
 const App = () => {
   return (
@@ -23,23 +29,27 @@ const App = () => {
                 <Route path="/" element={<Employee />} />
                 <Route path="/update/:id" element={<Update />} />
                 <Route path="/SignIn" element={<SignIn />} />
+                    {/* Goes to that sneaker inventory */}
                 <Route path="/Jordan" element={<Jordan />} />
                 <Route path="/Yeezy" element={<Yeezy />} />
                 <Route path="/Dunk" element={<Dunk />} />
-                <Route path="/AirMax" element={<AirMax />} />  
+                <Route path="/AirMax" element={<AirMax />} /> 
+                    {/* Goes to that sneaker image */}
                 <Route path="/maximage" element={<Maximage />} />
                 <Route path="/Kasina" element={<Kasina />} />    
                 <Route path="/Rainbow" element={<Rainbow />} />   
                 <Route path="/Neon" element={<Neon />} />  
                 <Route path="/OffWhitewhte" element={<OffWhitewhte />} />  
-                <Route path="/Concepts" element={<Concepts />} />    
+                <Route path="/Concepts" element={<Concepts />} />   
+                <Route path="/OnesRed" element={<OnesRed />} />   
+                <Route path="/Elevens" element={<Elevens />} /> 
+                <Route path="/OnesBlue" element={<OnesBlue />} /> 
+                <Route path="/Sixes" element={<Sixes />} /> 
+                <Route path="/Twos" element={<Twos />} /> 
+                <Route path="/Threes" element={<Threes />} /> 
           </Routes>
         </Router>
     </Container>
-
-
-
-
 
      
   );
@@ -48,40 +58,3 @@ const App = () => {
 export default App;
 
 
-
-// import './App.css';
-// import Menu from './components/Menu';
-// import Categories from './components/Categories';
-// import items from './components/Data';
-// import React, { useState } from "react";
-
-// //only get unique categories from the list
-// const allCategories = ['all',...new Set(items.map((item)=> item.category))]
-
-
-// function App() {
-//   const[menuItems,setMenuItems] = useState(items);
-//   const [categories,setCategories] = useState (allCategories);
-
-//   const filterItems = (category) => {
-//     if(category === 'all'){
-//       setMenuItems(items);
-//       return;
-//     }
-//     const newItems = items.filter((item) => item.category === category)
-//     setMenuItems(newItems)
-//   }
-//   return <main>
-//     <section className="menu section">
-//     <div className='title'>
-//       <h2>Menu</h2>
-//       <div className='underline'></div>
-//     </div>
-//     <Categories categories={categories} filterItems={filterItems}/>
-//     <Menu items={menuItems}/>
-//     </section>
-
-//   </main>;
-// }
-
-// export default App;
